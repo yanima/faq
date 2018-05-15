@@ -1,0 +1,280 @@
+@nav_title:14px;
+@focus_nav_color:#4194d1;
+@nav_color:#353535;
+@content_title:17px;
+@content_common:13px;
+@content_title_color:#020202;
+@content_common_color:#888888;
+@margin:12px;
+@color:#fff;
+@black_color:#000;
+
+@background:#fafafa;
+//common style
+body,dl,dd,dt,p,h1,h2,h3,h4,h5,h6,ul,li{
+    padding: 0;
+    margin:0;
+  }
+  *{
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    margin:0;
+    padding:0;
+  }
+  body{
+    color: @nav_color;
+    font-size:16px;
+    background:@color; 
+  }
+  html,body{
+    max-width: 750px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+  }
+  button{
+    outline: none;
+  }
+  em{
+    font-style:normal;
+  }
+  li{
+    list-style: none;
+  }
+  a{
+    text-decoration: none;
+  }
+  .displayflex{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;/*垂直居中*/
+    justify-content: center;/*水平居中*/
+  }
+  .flex1{
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+  .f-l{
+    float:left;
+  }
+  .f-r{
+    float:right;
+  }
+  .cf:after {
+    display:block;
+    clear:both;
+    visibility:hidden;
+    height:0;
+    overflow:hidden;
+    content:".";
+  }
+  .cf {
+    zoom: 1;
+  }
+  .weui-textarea{
+    background: none;
+  }
+ 
+
+  .weui-tab{
+    position: relative;
+    height: 100%;
+    .navbar-active {
+        color: @focus_nav_color;
+    }
+    .navbar::after {
+        border-right: none;
+    }
+    .weui-navbar{
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        position: fixed;
+        z-index: 500;
+        top: 0;
+        width: 100%;
+        height: 0.88rem;
+        line-height: 0.88rem;
+        background-color: #fafafa;
+        &::after{
+            content: " ";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            height: 1px;
+            border-bottom: 1px solid #ccc;
+            color: #ccc;
+            -webkit-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+            -webkit-transform: scaleY(.5);
+            transform: scaleY(.5);
+        }
+       
+      
+    }
+}
+
+.weui-navbar__slider {
+    position: absolute;
+    content: " ";
+    left: 0;
+    bottom: 0;
+    width: 6em;
+    height: 3px;
+    background-color: @focus_nav_color;
+    transition: transform .3s;
+}
+.weui-navbar__item{
+    position: relative;
+    display: block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+    font-size: 15px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    &::after{
+        content: " ";
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1px;
+        bottom: 0;
+        border-right: 1px solid #ccc;
+        color: #ccc;
+        -webkit-transform-origin: 100% 0;
+        transform-origin: 100% 0;
+        -webkit-transform: scaleX(.5);
+        transform: scaleX(.5);
+    }
+}
+.weui-navbar + .weui-tab__panel {
+    padding-top: 1rem;
+    padding-bottom: 0;
+  }
+.weui-tab__panel {
+    box-sizing: border-box;
+    height: 100%;
+    padding-bottom: 1rem;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    .part-page {
+        text-align: left;
+        display: none;
+        .accordion {
+            width: 100%;
+            background: #FFF;
+            -webkit-border-radius: 0.04rem;
+            -moz-border-radius: 0.04rem;
+            border-radius: 0.04rem;
+            .list_line{
+                border-bottom: 1px solid #ebebeb;
+                padding-left: 0.24rem;
+                list-style-type: decimal;
+            }
+            .link {
+                cursor: pointer;
+                display: block;
+                padding: 0.15rem 0.15rem 0.15rem 0;
+                color: #4D4D4D;
+                font-size: 14px;
+                font-weight: normal;
+                position: relative;
+                -webkit-transition: all 0.4s ease;
+                -o-transition: all 0.4s ease;
+                transition: all 0.4s ease;
+        }
+        .submenu {
+            display: none;
+            background: #fff;
+            color: @content_common_color;
+            font-size: 13px;
+            padding-right: 0.24rem;
+            
+        }
+    }
+    
+}
+.show {
+    display: block;
+}
+}
+.weui-cell__ft {
+    padding-right: 13px;
+    position: relative;
+    &::after {
+        content: " ";
+        display: inline-block;
+        height: 6px;
+        width: 6px;
+        border-width: 2px 2px 0 0;
+        border-color: #C8C8CD;
+        border-style: solid;
+        -webkit-transform: rotate(135deg);
+                transform: rotate(135deg);
+        position: relative;
+        top: -0.02rem;
+        position: absolute;
+        top: 50%;
+        margin-top: -0.3rem;
+        right: 0.24rem;
+        transition:  all 0.6s ;
+        -webkit-transition: all 0.6s;
+  }
+ 
+}
+.open{
+    .weui-cell__ft::after{
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    border-color:@focus_nav_color;
+    margin-top: -0.16rem;    
+    transition:  all 0.6s ;
+    -webkit-transition: all 0.6s;
+  }
+}
+.black_color{
+    color: @black_color;
+    font-size: 17px;
+}
+.step{
+    margin-top:0.24rem;
+    margin-bottom: 0.24rem;
+   
+    .step_title{
+        font-size: 13px;
+        color: @focus_nav_color;
+        font-weight: 500;
+        line-height: 1.6;
+    }
+    .step_title_1{
+        color: @black_color;
+    }
+    .step_content{
+        padding-top:0.12rem;
+        ol{
+            padding-left:0.26rem; 
+            // list-style-type: circle;
+            li{
+                list-style-type: disc;
+                list-style-position: outside;
+            }
+        }
+        .wechat_images{
+            width: 3.8rem;
+            display: block;
+            margin: 0.16rem auto;
+        }
+    }
+   
+}
+img{
+    width: 100%;
+    margin: 0.16rem 0;
+}
